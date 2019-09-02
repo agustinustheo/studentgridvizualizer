@@ -49,7 +49,7 @@
         #buttonContainer{
             display: table;
             margin: auto;
-            margin-top: 20px;
+            margin-top: 10px;
         }
         #secondButtonContainer{
             display: table;
@@ -72,8 +72,32 @@
             align-items: center;
             margin-left: 10px;
         }
+        #instructions{
+            display: table;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 25px;
+        }
+        #numberInput{
+            width: 40px;
+        }
+        #inputContainer{
+            display: table;
+            margin: auto;
+            margin-top: 20px;
+        }
     </style>
     <h1 id="pageTitle">Student Grid Visualizer</h1>
+
+    <div id="instructions">
+        <b>Instructions:</b>
+        <ul>
+            <li>Left click the box to change color</li>
+            <li>Right click the box to change status</li>
+            <li>Generate Table when you want to copy to excel</li>
+            <li>Click Copy Table button to copy generated table to clipboard</li>
+        </ul>
+    </div>
 
     <div id="legend">
         <b>Legend: </b>
@@ -110,6 +134,11 @@
     <div id="canvasContainer">
         <div id="canvas">
         </div>
+    </div>
+
+    <div id="inputContainer">
+        <b>Step: </b>
+        <input type="number" id="numberInput" min="1" max="15" value="1">
     </div>
 
     <div id="buttonContainer">
@@ -240,7 +269,7 @@
                     let row = document.createElement("tr");
 
                     let step = document.createElement("td");
-                    step.innerHTML = "1";
+                    step.innerHTML = document.getElementById("numberInput").value;
                     row.appendChild(step);
 
                     let pixel = document.createElement("td");
